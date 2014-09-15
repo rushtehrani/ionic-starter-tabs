@@ -1,9 +1,6 @@
-angular.module('starter.services', [])
+'use strict';
 
-/**
- * A simple example service that returns some data.
- */
-.factory('Friends', function() {
+function UserFactory() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -18,9 +15,12 @@ angular.module('starter.services', [])
     all: function() {
       return friends;
     },
-    get: function(friendId) {
+
+    get: function(id) {
       // Simple index lookup
-      return friends[friendId];
+      return friends[id];
     }
   }
 });
+
+module.exports = UserFactory;
