@@ -3,6 +3,7 @@
 // Ionic Starter App
 
 require('./dashboard/dashboard');
+require('./friends/friends');
 
 var AppCtrl = require('./app-controller');
 
@@ -12,7 +13,7 @@ var AppCtrl = require('./app-controller');
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'dashboard'])
+angular.module('starter', ['ionic', 'dashboard', 'friends'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,7 +22,7 @@ angular.module('starter', ['ionic', 'dashboard'])
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
-    
+
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
@@ -45,18 +46,6 @@ angular.module('starter', ['ionic', 'dashboard'])
       templateUrl: 'tabs.html',
       abstract: true,
     })
-
-    // Each tab has its own nav history stack:
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
-        }
-      }
-    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tabs/dashboard');
