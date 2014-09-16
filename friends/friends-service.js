@@ -21,6 +21,6 @@ function UserFactory() {
       return friends[id];
     }
   }
-});
+};
 
 module.exports = UserFactory;

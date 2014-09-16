@@ -10,6 +10,8 @@ angular.module('friends', [])
 
 	.controller('FriendsCtrl', FriendsCtrl)
 
+	.controller('FriendsDetailCtrl', FriendsDetailCtrl)
+
 	.config(function($stateProvider) {
 		$stateProvider
 
