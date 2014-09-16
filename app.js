@@ -16,7 +16,16 @@ var AppCtrl = require('./app-controller');
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'dashboard', 'friends', 'account'])
 
-.run(function($ionicPlatform) {
+.run(function($rootScope, $ionicPlatform) {
+  $rootScope.$on('$stateChangeSuccess', function(event, toState) { //, toParams, fromState, fromParams 
+    // Show/hide ionic tab bar
+    if (toState.hasTabs === false) {
+      $rootScope.hasTabs = false;
+    } else {
+      $rootScope.hasTabs = true;
+    }
+  });
+  
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
